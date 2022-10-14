@@ -86,7 +86,7 @@
           type: "multiple",
           difficulty: "easy",
           question:
-            "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+            "In the programming language Java, which of these keywords would you put on a variable to make sure it doesnt get modified?",
           correct_answer: "Final",
           incorrect_answers: ["Static", "Private", "Public"],
         },
@@ -180,14 +180,10 @@
       //       <div>
       //         <input type="radio" id="huey" name="drone" value="huey" checked />
       //         <label for="huey">Huey</label>
-      //       </div>
 
-      //       <div>
       //         <input type="radio" id="dewey" name="drone" value="dewey" />
       //         <label for="dewey">Dewey</label>
-      //       </div>
 
-      //       <div>
       //         <input type="radio" id="louie" name="drone" value="louie" />
       //         <label for="louie">Louie</label>
       //       </div>
@@ -196,6 +192,9 @@
       // const displayingAnswers = function(){
       //   for(i = 0; i<)
       //   }
+      const submitAnswer = function () {
+        console.log("answer submitted");
+      };
 
       window.onload = function () {
         const categoryDiv = document.createElement("div");
@@ -229,6 +228,10 @@
             arrAvailableAnswers.push(incorrectAnswers[j]);
           }
 
+          const answerDiv = document.createElement("div");
+          answerDiv.className = "answerDiv";
+          fieldSet.appendChild(answerDiv);
+
           for (let k = 0; k < arrAvailableAnswers.length; k++) {
             const labelButton = document.createElement("label");
             labelButton.setAttribute("for", arrAvailableAnswers[k]);
@@ -237,15 +240,19 @@
             const inputButton = document.createElement("INPUT");
             inputButton.setAttribute("type", "radio");
             inputButton.setAttribute("value", arrAvailableAnswers[k]);
+            inputButton.setAttribute("name", "radioGroup" + [i]);
             inputButton.className = "answer";
-
-            const answerDiv = document.createElement("div");
-            answerDiv.className = "answerDiv";
 
             answerDiv.appendChild(inputButton);
             answerDiv.appendChild(labelButton);
-            fieldSet.appendChild(answerDiv);
           }
+
+          const submitButton = document.createElement("button");
+          submitButton.setAttribute("type", "submit");
+          submitButton.setAttribute("class", "submit-button");
+          submitButton.setAttribute("onclick", "submitAnswer();");
+          submitButton.innerText = "Submit";
+          fieldSet.appendChild(submitButton);
         }
       };
     </script>
