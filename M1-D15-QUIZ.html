@@ -26,42 +26,42 @@
         / Start working with the questions saved in a variable (or you can use AJAX for fetching external questions if you already know how to do it!)
         / Start with the easier version and THEN implement the EXTRAs
         / Please debug everything / try it on the console to be sure of what to expect from your code
-
+        
         EXTRA:
         / Show if the answer provided was the wrong one or correct it after clicking
         / Present the questions one at a time instead of having all of them displayed together
         / Let the user select difficulty and number of questions (you can get q/a from https://opentdb.com/api.php?amount=10&category=18&difficulty=easy modifying amount and difficulty)
-    
+        
         /* WHEN YOU ARE FINISHED
           Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
-        */
-    -->
-  </head>
-  <body>
-    <header><h1>Welcome to the Quiz-Game!</h1></header>
-    <div id="container">
-      <!-- <div class="question-box">
-        <h2>Question No. 1</h2>
+          */
+        -->
+      </head>
+      <body>
+        <header><h1>Welcome to the Quiz-Game!</h1></header>
+        <div id="container">
+          <div class="question-box">
+        <!-- <h2>Question No. 1</h2>
         <div class="category">Science: Computers</div>
         <div class="difficulty">easy</div>
         <div class="question">What does CPU stand for?</div>
         <div class="Answers">
           <fieldset>
             <legend>Please select your answer:</legend>
-
+            
             <div>
               <input type="radio" id="huey" name="drone" value="huey" checked />
               <label for="huey">Huey</label>
             </div>
-
+            
             <div>
               <input type="radio" id="dewey" name="drone" value="dewey" />
               <label for="dewey">Dewey</label>
             </div>
-
+            
             <div>
               <input type="radio" id="louie" name="drone" value="louie" />
-              <label for="louie">Louie</label>
+              <label for="louie manson">Louie</label>
             </div>
           </fieldset>
         </div>
@@ -86,7 +86,7 @@
           type: "multiple",
           difficulty: "easy",
           question:
-            "In the programming language Java, which of these keywords would you put on a variable to make sure it doesnt get modified?",
+          "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
           correct_answer: "Final",
           incorrect_answers: ["Static", "Private", "Public"],
         },
@@ -103,7 +103,7 @@
           type: "boolean",
           difficulty: "easy",
           question:
-            "Pointers were not used in the original C programming language; they were added later on in C++.",
+          "Pointers were not used in the original C programming language; they were added later on in C++.",
           correct_answer: "False",
           incorrect_answers: ["True"],
         },
@@ -112,7 +112,7 @@
           type: "multiple",
           difficulty: "easy",
           question:
-            "What is the most preferred image format used for logos in the Wikimedia database?",
+          "What is the most preferred image format used for logos in the Wikimedia database?",
           correct_answer: ".svg",
           incorrect_answers: [".png", ".jpeg", ".gif"],
         },
@@ -133,7 +133,7 @@
           type: "multiple",
           difficulty: "easy",
           question:
-            "What is the code name for the mobile operating system Android 7.0?",
+          "What is the code name for the mobile operating system Android 7.0?",
           correct_answer: "Nougat",
           incorrect_answers: [
             "Ice Cream Sandwich",
@@ -162,46 +162,46 @@
           type: "multiple",
           difficulty: "easy",
           question:
-            "Which programming language shares its name with an island in Indonesia?",
+          "Which programming language shares its name with an island in Indonesia?",
           correct_answer: "Java",
           incorrect_answers: ["Python", "C", "Jakarta"],
         },
       ];
-
+      
       const container = document.getElementById("container");
       //    <h2>Question No. 1</h2>
       //   <div class="category">Science: Computers</div>
       //   <div class="difficulty">easy</div>
       //   <div class="question">What does CPU stand for?</div>
       //   <div class="Answers">
-      //     <fieldset>
-      //       <legend>Please select your answer:</legend>
-
-      //       <div>
-      //         <input type="radio" id="huey" name="drone" value="huey" checked />
-      //         <label for="huey">Huey</label>
-      //       </div>
-
-      //       <div>
-      //         <input type="radio" id="dewey" name="drone" value="dewey" />
-      //         <label for="dewey">Dewey</label>
-      //       </div>
-
-      //       <div>
+        //     <fieldset>
+          //       <legend>Please select your answer:</legend>
+          
+          //       <div>
+            //         <input type="radio" id="huey" name="drone" value="huey" checked />
+            //         <label for="huey">Huey</label>
+            //       </div>
+      
+            //       <div>
+              //         <input type="radio" id="dewey" name="drone" value="dewey" />
+              //         <label for="dewey">Dewey</label>
+              //       </div>
+              
+              //       <div>
       //         <input type="radio" id="louie" name="drone" value="louie" />
       //         <label for="louie">Louie</label>
       //       </div>
       //     </fieldset>
 
       // const displayingAnswers = function(){
-      //   for(i = 0; i<)
-      //   }
-
-      window.onload = function () {
-        const categoryDiv = document.createElement("div");
-        categoryDiv.innerText = questions[0].category;
-        container.appendChild(categoryDiv);
-        const difficultyDiv = document.createElement("div");
+        //   for(i = 0; i<)
+        //   }
+        
+        window.onload = function () {
+          const categoryDiv = document.createElement("div");
+          categoryDiv.innerText = questions[0].category;
+          container.appendChild(categoryDiv);
+          const difficultyDiv = document.createElement("div");
         difficultyDiv.innerText = "Difficulty: " + questions[2].difficulty;
         container.appendChild(difficultyDiv);
 
@@ -209,41 +209,57 @@
           const h2 = document.createElement("h2");
           h2.innerText = "Question no. " + (i + 1);
           container.appendChild(h2);
-
+          
           const questionDiv = document.createElement("div");
           questionDiv.classList.add("question");
           questionDiv.innerText = questions[i].question;
           container.appendChild(questionDiv);
-
+          
           const fieldSet = document.createElement("fieldset");
           const legend = document.createElement("legend");
           legend.innerText = "Please select your answer:";
           container.appendChild(fieldSet);
           fieldSet.appendChild(legend);
-
+          
           const correctAnswer = [questions[i].correct_answer];
-          const incorrectAnswers = [questions[i].incorrect_answers];
-          const availableAnswers = correctAnswer.concat(incorrectAnswers);
-
-          console.log(availableAnswers);
-          // displayingAnswers ();
+          const incorrectAnswers = questions[i].incorrect_answers;
+          arrAvailableAnswers = correctAnswer;
+          
+          for (let j = 0; j < incorrectAnswers.length; j++) {
+            arrAvailableAnswers.push(incorrectAnswers[j]);
+          }
+          
+          for (let k = 0; k<arrAvailableAnswers.length; k++) {
+            const labelButton = document.createElement('label');
+            labelButton.setAttribute('for', arrAvailableAnswers[k]);
+              labelButton.innerText = arrAvailableAnswers[k];
+              
+              const inputButton = document.createElement('input');
+              inputButton.setAttribute('type', 'radio');
+              inputButton.setAttribute('value', arrAvailableAnswers[k]);
+              inputButton.className('answer');
+              
+              const answerDiv = document.createElement('div');
+              answerDiv.className('answerDiv');
+            }
         }
       };
-      // HINTS
-      // IF YOU ARE DISPLAYING ALL THE QUESTIONS AT ONCE:
-      // For each question, create a container for wrapping it; then create a radio button
-      // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
-      // with, as options, both the correct answer and the incorrect ones
-      // (you'll probably need to google how to get the value from a radio button in JS to evaluate the final score)
-      //
-      // IF YOU ARE DISPLAYING ONE QUESTION AT A TIME
-      // Display the first question with the text and the radio buttons
-      // when the user selects an answer, pick the next question from the array and replace the old one with it
-      // saving the user's choice in a variable
-
-      // How to calculate the result? You can do it in 2 ways:
-      // If you are presenting all the questions together, just take all the radio buttons and check if the selected answer === correct_answer
-      // If you are presenting one question at a time, just add one point or not to the user score if the selected answer === correct_answer
-    </script>
+      </script>
   </body>
 </html>
+  
+  <!-- // HINTS
+  // IF YOU ARE DISPLAYING ALL THE QUESTIONS AT ONCE:
+  // For each question, create a container for wrapping it; then create a radio button
+  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+  // with, as options, both the correct answer and the incorrect ones
+  // (you'll probably need to google how to get the value from a radio button in JS to evaluate the final score)
+  //
+  // IF YOU ARE DISPLAYING ONE QUESTION AT A TIME
+  // Display the first question with the text and the radio buttons
+  // when the user selects an answer, pick the next question from the array and replace the old one with it
+  // saving the user's choice in a variable
+
+  // How to calculate the result? You can do it in 2 ways:
+  // If you are presenting all the questions together, just take all the radio buttons and check if the selected answer === correct_answer
+  // If you are presenting one question at a time, just add one point or not to the user score if the selected answer === correct_answer -->
