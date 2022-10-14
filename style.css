@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  width: 800px;
+  padding-inline: 2rem;
+}
+header {
+  width: 90%;
+}
+
+header h1 {
+  margin-left: 2rem;
+}
+
+.container {
+  display: block;
+}
