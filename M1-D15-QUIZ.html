@@ -39,34 +39,7 @@
   </head>
   <body>
     <header><h1>Welcome to the Quiz-Game!</h1></header>
-    <div id="container">
-      <!-- <div class="question-box">
-        <h2>Question No. 1</h2>
-        <div class="category">Science: Computers</div>
-        <div class="difficulty">easy</div>
-        <div class="question">What does CPU stand for?</div>
-        <div class="Answers">
-          <fieldset>
-            <legend>Please select your answer:</legend>
-            
-            <div>
-              <input type="radio" id="huey" name="drone" value="huey" checked />
-              <label for="huey">Huey</label>
-            </div>
-            
-            <div>
-              <input type="radio" id="dewey" name="drone" value="dewey" />
-              <label for="dewey">Dewey</label>
-            </div>
-            
-            <div>
-              <input type="radio" id="louie" name="drone" value="louie" />
-              <label for="louie manson">Louie</label>
-            </div>
-          </fieldset>
-        </div>
-      </div> -->
-    </div>
+    <div id="container"></div>
     <script>
       const questions = [
         {
@@ -193,7 +166,20 @@
       //   for(i = 0; i<)
       //   }
       const submitAnswer = function () {
-        console.log("answer submitted");
+        const submitButton = document.getElementById("submit-button0");
+
+        const question = questions[0];
+
+        submitButton.addEventListener("click", function (e) {
+          const selectedAnswer = document.querySelector(
+            'input[name="radioGroup0"]:checked'
+          ).value;
+          if (selectedAnswer === question.correct_answer) {
+            console.log("correct answer");
+          } else {
+            console.log("INcorrect answer");
+          }
+        });
       };
 
       window.onload = function () {
@@ -228,10 +214,6 @@
             arrAvailableAnswers.push(incorrectAnswers[j]);
           }
 
-          const answerDiv = document.createElement("div");
-          answerDiv.className = "answerDiv";
-          fieldSet.appendChild(answerDiv);
-
           for (let k = 0; k < arrAvailableAnswers.length; k++) {
             const labelButton = document.createElement("label");
             labelButton.setAttribute("for", arrAvailableAnswers[k]);
@@ -243,13 +225,16 @@
             inputButton.setAttribute("name", "radioGroup" + [i]);
             inputButton.className = "answer";
 
+            const answerDiv = document.createElement("div");
+            answerDiv.className = "answerDiv";
+            fieldSet.appendChild(answerDiv);
             answerDiv.appendChild(inputButton);
             answerDiv.appendChild(labelButton);
           }
 
           const submitButton = document.createElement("button");
           submitButton.setAttribute("type", "submit");
-          submitButton.setAttribute("class", "submit-button");
+          submitButton.setAttribute("id", "submit-button" + [i]);
           submitButton.setAttribute("onclick", "submitAnswer();");
           submitButton.innerText = "Submit";
           fieldSet.appendChild(submitButton);

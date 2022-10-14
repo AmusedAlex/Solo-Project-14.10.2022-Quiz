@@ -2,6 +2,7 @@ body {
   margin: 0;
   width: 500px;
   padding-inline: 2rem;
+  background-color: rgb(250, 246, 240);
 }
 header {
   width: 90%;
@@ -12,7 +13,9 @@ header h1 {
 }
 
 #container {
+  padding-inline: 2rem;
   background-color: antiquewhite;
+  padding-top: 2rem;
 }
 
 .question {
