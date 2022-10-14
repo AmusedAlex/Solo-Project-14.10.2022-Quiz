@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  width: 800px;
+  width: 500px;
   padding-inline: 2rem;
 }
 header {
@@ -11,6 +11,10 @@ header h1 {
   margin-left: 2rem;
 }
 
-.container {
-  display: block;
+#container {
+  background-color: antiquewhite;
+}
+
+.question {
+  margin-bottom: 1rem;
 }

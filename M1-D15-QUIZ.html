@@ -39,7 +39,7 @@
   </head>
   <body>
     <header><h1>Welcome to the Quiz-Game!</h1></header>
-    <div id="containter">
+    <div id="container">
       <!-- <div class="question-box">
         <h2>Question No. 1</h2>
         <div class="category">Science: Computers</div>
@@ -86,7 +86,7 @@
           type: "multiple",
           difficulty: "easy",
           question:
-            "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+            "In the programming language Java, which of these keywords would you put on a variable to make sure it doesnt get modified?",
           correct_answer: "Final",
           incorrect_answers: ["Static", "Private", "Public"],
         },
@@ -168,6 +168,7 @@
         },
       ];
 
+      const container = document.getElementById("container");
       //    <h2>Question No. 1</h2>
       //   <div class="category">Science: Computers</div>
       //   <div class="difficulty">easy</div>
@@ -192,25 +193,40 @@
       //       </div>
       //     </fieldset>
 
+      // const displayingAnswers = function(){
+      //   for(i = 0; i<)
+      //   }
+
       window.onload = function () {
-        for (i = 0; i < 1; i++) {
-          const container = document.getElementById("container");
+        const categoryDiv = document.createElement("div");
+        categoryDiv.innerText = questions[0].category;
+        container.appendChild(categoryDiv);
+        const difficultyDiv = document.createElement("div");
+        difficultyDiv.innerText = "Difficulty: " + questions[2].difficulty;
+        container.appendChild(difficultyDiv);
+
+        for (i = 0; i < questions.length; i++) {
           const h2 = document.createElement("h2");
           h2.innerText = "Question no. " + (i + 1);
           container.appendChild(h2);
-          const categoryDiv = document.createElement("div");
-          categoryDiv.innerText = questions[i].category;
-          container.appendChild(categoryDiv);
-          const difficultyDiv = document.createElement("div");
-          difficultyDiv.innerText = questions[i].difficulty;
-          container.appendChild(difficultyDiv);
+
           const questionDiv = document.createElement("div");
+          questionDiv.classList.add("question");
           questionDiv.innerText = questions[i].question;
           container.appendChild(questionDiv);
-          console.log(container);
-          console.log(h2);
-          console.log(categoryDiv);
-          console.log(difficultyDiv);
+
+          const fieldSet = document.createElement("fieldset");
+          const legend = document.createElement("legend");
+          legend.innerText = "Please select your answer:";
+          container.appendChild(fieldSet);
+          fieldSet.appendChild(legend);
+
+          const correctAnswer = [questions[i].correct_answer];
+          const incorrectAnswers = [questions[i].incorrect_answers];
+          const availableAnswers = correctAnswer.concat(incorrectAnswers);
+
+          console.log(availableAnswers);
+          // displayingAnswers ();
         }
       };
       // HINTS
